@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from app.routes import user, tasks
-from app.config.config import FRONTEND_URL
+from app.config.config import settings
 
 app = FastAPI()
 
@@ -11,7 +11,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[FRONTEND_URL], 
+    allow_origins=[settings.FRONTEND_URL], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
