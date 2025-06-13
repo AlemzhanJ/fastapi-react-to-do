@@ -1,6 +1,6 @@
 import { TaskCard } from '../components/Task'
 import { Link } from 'react-router-dom'
-import { ArrowLef } from '@phosphor-icons/react'
+import { ArrowLeft } from '@phosphor-icons/react'
 
 import { useEffect, useState } from 'react'
 
