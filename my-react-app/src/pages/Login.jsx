@@ -56,7 +56,7 @@ function Login() {
   }
 
   return (
-    <main className='bg-black flex items-center justify-center min-h-screen'>
+    <main className='bg-black flex items-center justify-center min-h-screen p-2'>
       <form
         className='p-6 w-full max-w-xl flex flex-col gap-4 bg-neutral-900 border border-neutral-800 rounded-lg'
         onSubmit={(e) => {
