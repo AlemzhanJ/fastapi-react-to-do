@@ -44,14 +44,22 @@ function Login() {
         { withCredentials: true }        // axios-config
       )
       console.log(`Login: ${JSON.stringify(res.data)}`)
-      navigate('/tasks')
+      
+      // Попробуем navigate, если не сработает - используем window.location
+      try {
+        // Небольшая задержка для мобильных устройств
+        setTimeout(() => {
+          navigate('/tasks')
+        }, 100)
+      } catch (navError) {
+        console.log('Navigate failed, using window.location:', navError)
+        window.location.href = '/tasks'
+      }
     } catch(err){
       setIsLoading(false)
       const msg = err?.response?.data?.detail
       setErrorMessage(msg)
     }
-
-    
   }
 
   return (

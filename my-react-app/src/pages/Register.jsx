@@ -60,7 +60,17 @@ function Register() {
         email,
         password
       }, {withCredentials: true})
-      navigate('/tasks')
+      
+      // Попробуем navigate, если не сработает - используем window.location
+      try {
+        setTimeout(() => {
+          navigate('/tasks')
+        }, 100)
+      } catch (navError) {
+        console.log('Navigate failed, using window.location:', navError)
+        window.location.href = '/tasks'
+      }
+      
       console.log(`Created: ${JSON.stringify(res.data)}`)
 
     } catch(err){
