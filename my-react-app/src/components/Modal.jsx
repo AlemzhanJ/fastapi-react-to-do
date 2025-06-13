@@ -54,11 +54,11 @@ export function Modal({setClicked, otherTasks, addTask, setAreTasksLoading}){
 
     return(
 
-        <div className = 'fixed inset-0 bg-black/40 z-50'
+        <div className = 'fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-2 sm:p-0'
              onClick = {() => setClicked(false)}
         >
-        <div className = 'fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-xl border border-neutral-800 bg-neutral-900 rounded-lg z-60'>
-            <form className = 'relative flex flex-col gap-4 w-full p-6'
+        <div className = 'relative w-full max-w-xl border border-neutral-800 bg-neutral-900 rounded-lg z-60 mx-auto'>
+            <form className = 'relative flex flex-col gap-4 w-full p-4 sm:p-6'
                   onSubmit = { async (e) => {
                     e.preventDefault()
                     await addNewTask()

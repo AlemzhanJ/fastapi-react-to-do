@@ -66,7 +66,7 @@ export function TaskCard({task, setTasks, allTasks, setAreTasksLoading}){
     }
 
     return(
-        <div className = 'relative rounded-lg hover:bg-neutral-800 hover:border-neutral-700 bg-neutral-900 text-neutral-200 rouded-large p-6 border border-neutral-800 w-full max-w-lg'>
+        <div className = 'relative rounded-lg hover:bg-neutral-800 hover:border-neutral-700 bg-neutral-900 text-neutral-200 rouded-large p-4 sm:p-6 border border-neutral-800 w-full max-w-lg transition break-words'>
             <button className = 'absolute top-2 right-2 hover:text-red-400 text-neutral-500'
                     onClick = {async() => {
                         await deleteTask(task.id)
