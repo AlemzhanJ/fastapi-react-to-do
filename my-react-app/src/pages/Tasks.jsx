@@ -39,7 +39,7 @@ function TaskBar(){
       
 
     return(
-        <main className = 'relative bg-black min-h-screen pt-60 sm:pt-60 md:pt-40 lg:pt-32 lg:pt-32 pb-10'>
+        <main className = 'relative bg-black min-h-screen pt-60 sm:pt-60 md:pt-60 lg:pt-60 lg:pt-60 pb-10'>
             <Link to="/" className="absolute left-4 top-4 z-50 bg-neutral-900 border border-neutral-700 rounded-full p-2 shadow-md hover:bg-neutral-800 transition sm:left-4 sm:top-8 text-neutral-700">
                 <ArrowLeft size={16} />
             </Link>
