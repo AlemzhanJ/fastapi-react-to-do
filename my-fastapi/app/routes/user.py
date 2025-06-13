@@ -21,7 +21,7 @@ def _issue_cookie(response: Response, token: str) -> None:
         key="access_token",
         value=token,
         httponly=True,
-        secure=False,          # локальная разработка → False
+        secure=True,          # локальная разработка → False
         samesite="lax",        # lax достаточно, strict ломает межпортовые куки
         max_age=60 * 60 * 24,  # сутки
         path="/",

@@ -10,7 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"], 
+    allow_origins=["https://vercel.com/alemzhans-projects/alemzhan-to-do/HQ58QBCjricXAtGoW6sm9FPZ7E7x"], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
