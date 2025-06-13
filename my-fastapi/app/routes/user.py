@@ -21,8 +21,8 @@ def _issue_cookie(response: Response, token: str) -> None:
         key="access_token",
         value=token,
         httponly=True,
-        secure=True,          # локальная разработка → False
-        samesite="lax",        # lax достаточно, strict ломает межпортовые куки
+        secure=True,          # для HTTPS в продакшене
+        samesite="none",      # для cross-origin между Vercel и Render
         max_age=60 * 60 * 24,  # сутки
         path="/",
     )
