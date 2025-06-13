@@ -91,7 +91,7 @@ export function TaskCard({task, setTasks, allTasks, setAreTasksLoading}){
               </div>)
 
               
-            : (<form className = 'flex flex-col gap-6 mt-4'
+            : (<form className = 'flex flex-col gap-6 mt-6'
                      onSubmit = { e => {
                         e.preventDefault()
                         editTask()
