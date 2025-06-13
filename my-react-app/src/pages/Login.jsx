@@ -44,9 +44,8 @@ function Login() {
         { withCredentials: true }        // axios-config
       )
       console.log(`Login: ${JSON.stringify(res.data)}`)
-      navigate('/tasks'
-
-    )} catch(err){
+      navigate('/tasks')
+    } catch(err){
       setIsLoading(false)
       const msg = err?.response?.data?.detail
       setErrorMessage(msg)
