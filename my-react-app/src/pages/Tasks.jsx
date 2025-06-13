@@ -7,11 +7,7 @@ import { Modal } from '../components/Modal'
 import axios from 'axios'
 import { LoadingSpinner } from '../components/Loading'
 
-
-
-
-
-
+const backendUrl = import.meta.env.VITE_BACKEND_URL
 
 function TaskBar(){
     const [targetTask, inputTargetTask] = useState('')
@@ -20,7 +16,7 @@ function TaskBar(){
     const [clicked, setClicked] = useState(false)
 
     async function showTasks() {
-        const taskList = await axios.get('http://localhost:8000/tasks/', {
+        const taskList = await axios.get(`${backendUrl}/tasks/`, {
             withCredentials: true
         })
         setAreTasksLoading(false)

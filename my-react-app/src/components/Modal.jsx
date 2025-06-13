@@ -2,6 +2,8 @@ import { X } from '@phosphor-icons/react'
 import axios from 'axios'
 import { useState } from 'react'
 
+const backendUrl = import.meta.env.VITE_BACKEND_URL
+
 function getRandomExcept(excluded, min, max) {
         const allowed = []
 
@@ -38,7 +40,7 @@ export function Modal({setClicked, otherTasks, addTask, setAreTasksLoading}){
    async function addNewTask() {
         setAreTasksLoading(true)
         setClicked(false)
-        const new_task = await axios.post('http://localhost:8000/tasks/', {
+        const new_task = await axios.post(`${backendUrl}/tasks/`, {
             name: taskName,
             description: taskDescription
         },

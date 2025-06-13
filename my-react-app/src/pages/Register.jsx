@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { LoadingSpinner } from '../components/Loading'
 
+const backendUrl = import.meta.env.VITE_BACKEND_URL
+
 function Register() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -54,7 +56,7 @@ function Register() {
 
     try{
       setIsLoading(true)
-      const res = await axios.post('http://localhost:8000/users/register', {
+      const res = await axios.post(`${backendUrl}/users/register`, {
         email,
         password
       }, {withCredentials: true})

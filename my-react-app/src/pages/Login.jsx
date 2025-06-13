@@ -3,6 +3,8 @@ import { useState, useMemo } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { LoadingSpinner } from '../components/Loading'
 
+const backendUrl = import.meta.env.VITE_BACKEND_URL
+
 function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -37,7 +39,7 @@ function Login() {
     setIsLoading(true)
     try {
       const res = await axios.post(
-        'http://localhost:8000/users/login',
+        `${backendUrl}/users/login`,
         { email, password },             // body
         { withCredentials: true }        // axios-config
       )

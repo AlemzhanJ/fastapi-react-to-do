@@ -2,8 +2,7 @@ import { PencilSimpleIcon, Trash, X, CheckIcon } from '@phosphor-icons/react'
 import axios from 'axios'
 import { useState } from 'react'
 
-
-
+const backendUrl = import.meta.env.VITE_BACKEND_URL
 
 export function TaskCard({task, setTasks, allTasks, setAreTasksLoading}){
 
@@ -17,7 +16,7 @@ export function TaskCard({task, setTasks, allTasks, setAreTasksLoading}){
         console.log('Delete task...')
         try {
           setAreTasksLoading(true)
-          const remainedTasks = await axios.delete('http://localhost:8000/tasks/',{
+          const remainedTasks = await axios.delete(`${backendUrl}/tasks/`,{
           params:{
             task_id: taskId
           },
@@ -41,7 +40,7 @@ export function TaskCard({task, setTasks, allTasks, setAreTasksLoading}){
         setAreTasksLoading(true)
         try{
 
-          const edited_task = await axios.put('http://localhost:8000/tasks/',
+          const edited_task = await axios.put(`${backendUrl}/tasks/`,
             {id: task.id, name: taskName, description: taskDescription},
             {withCredentials: true}
           )

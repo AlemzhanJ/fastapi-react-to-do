@@ -19,9 +19,11 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
 
+  const backendUrl = import.meta.env.VITE_BACKEND_URL
+
   useEffect(() => {
     // Проверка токена: отправь запрос на `/me`
-    axios.get('http://localhost:8000/users/me', { withCredentials: true })
+    axios.get(`${backendUrl}/users/me`, { withCredentials: true })
       .then(() => {
         setIsAuthenticated(true)
         console.log('authenticated')
