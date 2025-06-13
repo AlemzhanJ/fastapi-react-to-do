@@ -39,7 +39,7 @@ function TaskBar(){
 
     return(
         <main className = 'relative bg-black min-h-screen pt-32 sm:pt-60 pb-10'>
-            <Link to="/" className="absolute left-4 top-4 z-50 bg-neutral-900 border border-neutral-700 rounded-full p-2 shadow-md hover:bg-neutral-800 transition sm:left-8 sm:top-8">
+            <Link to="/" className="absolute left-4 top-4 z-50 bg-neutral-900 border border-neutral-700 bg-neutral-700 rounded-full p-2 shadow-md hover:bg-neutral-800 transition sm:left-8 sm:top-8">
                 <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 19l-7-7 7-7"/></svg>
             </Link>
             <section className = 'absolute top-16 sm:top-20 left-1/2 -translate-x-1/2 w-full max-w-lg px-2 sm:px-0'>
